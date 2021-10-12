@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>CSP violation reports:</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-stripped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Document URI</th>
+            <th scope="col">Violated Directive</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let report of reports; let item=index">
+            <th scope="row">{{item+1}}</th>
+            <td>{{report["_id"]}}</td>
+            <td>{{report["csp-report"]["document-uri"]}}</td>
+            <td>{{report["csp-report"]["violated-directive"]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
